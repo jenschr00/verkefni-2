@@ -1,4 +1,5 @@
 from bottle import *
+import os
 
 @error(404)
 def villa(error):
@@ -39,7 +40,8 @@ def server_static(filename):
 def ba(id):
     return '<h2>þetta er bókstafurinn ' + id +'</h2>'+ '<h1><a href="/b">Til baka</a></h1>'
 
-run(host='localhost', port=8080)
+run(host='0.0.0.0', port=os.environ.get('PORT'))
+#run(host='localhost', port=8080)
 
 
     
